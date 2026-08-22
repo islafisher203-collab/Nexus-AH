@@ -12,7 +12,7 @@ st.write("Ask me anything! I am powered by Llama 3 and customized just for you."
 part1 = "gsk_"
 
 # APNI NAYI KEY KA 'gsk_' KE BAAD VALA POORA HISSA IS DOUBLE QUOTES KE ANDAR PASTE KAREIN
-part2 = "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"
+part2 = "ONCcBT7rsOWE1hpFGY9oWGdyb3FY8EFKcB4QFG1t0CMnHK7Z5v6n"
 
 asli_key = part1 + part2
 client = Groq(api_key=asli_key)
