@@ -9,7 +9,7 @@ st.subheader("The Ultimate Super-AI Matrix")
 st.write("Ask me anything! I am powered by Llama 3 and customized just for you.")
 
 # Direct Key Connection (No Advanced Settings needed)
-api_key = "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"
+api_key = "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"
 client = Groq(api_key=api_key)
 
 # Chat history ka system (Memory)
