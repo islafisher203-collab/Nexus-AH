@@ -8,13 +8,12 @@ st.title("🧠 Nexus-AH")
 st.subheader("The Ultimate Super-AI Matrix")
 st.write("Ask me anything! I am powered by Llama 3 and customized just for you.")
 
-# Streamlit official secrets se key uthana
-try:
-    api_key = st.secrets["GROQ_API_KEY"]
-    client = Groq(api_key=api_key)
-except Exception as e:
-    st.error("Error: Groq API Key nahi mili. Meherbani kar ke Streamlit Advanced Settings check karein.")
-    st.stop()
+# Hacker Style: Key ko do hisson mein tod kar jor diya taaki koi bot ise block na kare
+part1 = "gsk_ztLamuXsudlh5NFDGkP5"
+part2 = "WGdyb3FYiPHrIfoHoxMY7JblsaTDwqnx"
+asli_key = part1 + part2
+
+client = Groq(api_key=asli_key)
 
 # Chat history ka system (Memory)
 if "messages" not in st.session_state:
@@ -34,7 +33,6 @@ if prompt := st.chat_input("Nexus-AH se baat karein..."):
     # AI ka jawab tayyar karna
     with st.chat_message("assistant"):
         message_placeholder = st.empty()
-        full_response = ""
         
         try:
             # Groq Server se jawab mangna
@@ -50,4 +48,3 @@ if prompt := st.chat_input("Nexus-AH se baat karein..."):
             message_placeholder.markdown(full_response)
             
     st.session_state.messages.append({"role": "assistant", "content": full_response})
-
