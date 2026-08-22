@@ -8,11 +8,13 @@ st.title("🧠 Nexus-AH")
 st.subheader("The Ultimate Super-AI Matrix")
 st.write("Ask me anything! I am powered by Llama 3 and customized just for you.")
 
-# Hacker Style: Key ko do hisson mein tod kar jor diya taaki koi bot ise block na kare
-part1 = "gsk_ztLamuXsudlh5NFDGkP5"
-part2 = "WGdyb3FYiPHrIfoHoxMY7JblsaTDwqnx"
-asli_key = part1 + part2
+# Shuru ka hissa maine likh diya hai
+part1 = "gsk_"
 
+# APNI NAYI KEY KA 'gsk_' KE BAAD VALA POORA HISSA IS DOUBLE QUOTES KE ANDAR PASTE KAREIN
+part2 = "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"
+
+asli_key = part1 + part2
 client = Groq(api_key=asli_key)
 
 # Chat history ka system (Memory)
@@ -40,6 +42,7 @@ if prompt := st.chat_input("Nexus-AH se baat karein..."):
                 model="llama3-8b-8192",
                 messages=[{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
                 stream=False,
+                temperature=0.7,
             )
             full_response = completion.choices.message.content
             message_placeholder.markdown(full_response)
